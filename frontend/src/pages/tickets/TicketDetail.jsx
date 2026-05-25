@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import api from '../../services/api';
+import api, { BACKEND_URL } from '../../services/api';
 import toast from 'react-hot-toast';
 import StatusBadge from '../../components/StatusBadge';
 import {
@@ -294,7 +294,7 @@ export default function TicketDetail() {
               <div className="card-body">
                 <div className="attachments-list">
                   {ticket.attachments.map(a => (
-                    <a key={a.id} href={`/uploads/${a.file_path.replace(/.*uploads[\\/]/, '')}`}
+                    <a key={a.id} href={`${BACKEND_URL}/uploads/${a.file_path.replace(/.*uploads[\\/]/, '')}`}
                       target="_blank" rel="noopener noreferrer" className="attachment-chip">
                       <File size={13} style={{ flexShrink:0 }} /> {a.file_name}
                     </a>

@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: '/api' });
+// Dynamically determine the backend host for development vs production
+export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || (import.meta.env.DEV ? '' : 'https://tickets-management-backend-production.up.railway.app');
+const API_BASE_URL = BACKEND_URL ? `${BACKEND_URL}/api` : '/api';
+
+const api = axios.create({ baseURL: API_BASE_URL });
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
