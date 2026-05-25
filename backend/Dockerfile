@@ -17,7 +17,7 @@ COPY . .
 RUN mkdir -p uploads
 
 # Expose the port the app runs on
-EXPOSE 5000
+EXPOSE 3000
 
 # Set environment to production
 ENV NODE_ENV=production
