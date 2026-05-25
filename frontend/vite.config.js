@@ -8,12 +8,12 @@ export default defineConfig({
     port: 3001,
     proxy: {
       '/api': {
-        target: 'https://tickets-management-backend-production.up.railway.app',
+        target: 'https://tickets-management-backend-production-df72.up.railway.app',
         changeOrigin: true,
         secure: false,
       },
       '/uploads': {
-        target: 'https://tickets-management-backend-production.up.railway.app',
+        target: 'https://tickets-management-backend-production-df72.up.railway.app',
         changeOrigin: true,
         secure: false,
       },

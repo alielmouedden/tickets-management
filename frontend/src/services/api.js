@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Dynamically determine the backend host for development vs production
-export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || (import.meta.env.DEV ? '' : 'https://tickets-management-backend-production.up.railway.app');
+export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || (import.meta.env.DEV ? '' : 'https://tickets-management-backend-production-df72.up.railway.app');
 const API_BASE_URL = BACKEND_URL ? `${BACKEND_URL}/api` : '/api';
 
 const api = axios.create({ baseURL: API_BASE_URL });
